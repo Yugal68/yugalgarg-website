@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030303;
+  --foreground: #ededed;
+  --cyan: #00FFFF;
+  --magenta: #FF00FF;
+  --purple: #8B5CF6;
+  --cyan-dim: #00CCCC;
+  --magenta-dim: #CC00CC;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-cyan: var(--cyan);
+  --color-magenta: var(--magenta);
+  --color-purple: var(--purple);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar - Cyberpunk */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030303;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00FFFF, #FF00FF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FF00FF, #00FFFF);
+}
+
+/* Cyberpunk gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00FFFF 0%, #FF00FF 50%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #00FFFF 0%, #00CCCC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-magenta {
+  background: linear-gradient(135deg, #FF00FF 0%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Cyberpunk glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+.glow-magenta {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4), 0 0 40px rgba(255, 0, 255, 0.2);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.text-glow-magenta {
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+/* Card hover effect - Cyberpunk */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 0 0 60px rgba(255, 0, 255, 0.1);
+}
+
+/* Typing cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+/* Animated gradient */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+/* Cyberpunk border animation */
+@keyframes borderGlow {
+  0%, 100% { border-color: #00FFFF; }
+  50% { border-color: #FF00FF; }
+}
+
+.animate-border {
+  animation: borderGlow 3s ease infinite;
+}
+
+/* Background grid pattern - Cyberpunk */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Selection color - Cyberpunk */
+::selection {
+  background: rgba(255, 0, 255, 0.3);
+  color: #00FFFF;
+}
+
+/* Cyberpunk button styles */
+.btn-cyber {
+  position: relative;
+  background: linear-gradient(135deg, #00FFFF, #FF00FF);
+  padding: 1px;
+  border-radius: 9999px;
+}
+
+.btn-cyber-inner {
+  background: #030303;
+  border-radius: 9999px;
+  padding: 12px 32px;
+  transition: all 0.3s;
+}
+
+.btn-cyber:hover .btn-cyber-inner {
+  background: transparent;
+}
+
+/* Neon line */
+.neon-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00FFFF, #FF00FF, transparent);
 }
