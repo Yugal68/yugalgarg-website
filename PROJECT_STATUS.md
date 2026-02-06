@@ -48,7 +48,16 @@
 
 ---
 
+## Active Tasks
+- [ ] Test and deploy website changes (2026-02-05)
+
 ## Completed Tasks
+- [x] Add profile picture to Hero section (2026-02-05)
+- [x] Add Feedback form component with rating system (2026-02-05)
+- [x] Fix navbar overlapping with hero content - added top padding (2026-02-05)
+- [x] Email mailto link already working in Contact section (2026-02-05)
+- [x] Remove hash (#) from URLs - implemented clean URL routing (2026-02-04)
+- [x] Redesign Hero section with "Who/Solving What/For Whom" value proposition (2026-02-04)
 - [x] Initial requirements discussion (2026-02-01)
 - [x] Tech stack decided (2026-02-01)
 - [x] Project setup with Next.js, Tailwind, Framer Motion (2026-02-01)
@@ -96,6 +105,9 @@
 | Change | File |
 |--------|------|
 | Hero text | `src/components/Hero.tsx` |
+| Feedback form | `src/components/Feedback.tsx` |
+| Clean URL routing | `src/components/ScrollManager.tsx` |
+| URL rewrites | `next.config.ts` |
 | Services | `src/components/Services.tsx` |
 | Portfolio | `src/components/Portfolio.tsx` |
 | Testimonials | `src/components/Testimonials.tsx` |
@@ -113,6 +125,8 @@
 ## Important Decisions
 | Date | Decision | Reasoning |
 |------|----------|-----------|
+| 2026-02-04 | Clean URLs (no hash) | Better SEO, cleaner sharing links using history.replaceState + rewrites |
+| 2026-02-04 | Hero value proposition | "Who/Solving What/For Whom" framework for clearer messaging |
 | 2026-02-01 | Vercel hosting | Free, auto-deploy from GitHub |
 | 2026-02-01 | Cyberpunk theme | User preference over plain blue |
 | 2026-02-01 | Web3Forms | Free, easy contact form integration |
